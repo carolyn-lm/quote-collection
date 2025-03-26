@@ -1,38 +1,144 @@
+/* Global styles */
+body {
+  background-color: floralwhite;
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 1.125rem;
+}
+
 .App {
   text-align: center;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  margin: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Folders, quotes, and buttons are all clickable */
+.folder:hover,
+.quote-card:hover,
+.header-button:hover {
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* text edit fields */
+.folder_name,
+.quote-text,
+.quote-source {
+  background: transparent;
+  border: none;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1rem;
+}
+
+/* Header Styles */
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.header-button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: thistle;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-options {
+  display: inline-block;
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.color-option {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+  list-style: none;
+}
+
+.color-option:hover {
+  font-weight: bolder;
+}
+
+/* Folders  */
+.folder {
+  width: 200px;
+  height: 150px;
+  margin: 10px;
+  border: 1px solid grey;
+  box-shadow: 2px 2px 3px lightgrey;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.folder_name {
+  font-family: "Lexend", sans-serif;
+  font-size: 1.5rem;
+}
+
+/* Quotes */
+.quote-card {
+  /* one column of quotes in mobile */
+  width: 100%;
+  max-width: 100%;
+  /* height: 200px; */
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+
+.quote {
+  margin-top: 30px;
+}
+
+.quote-text {
+  font-size: 1.25rem;
+}
+
+/* Tablet */
+@media (min-width: 800px) {
+  .quote-card {
+    width: calc(50% - 2.5rem);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* Desktop */
+@media (min-width: 1400px) {
+  .quote-card {
+    width: calc(33% - 1.42rem);
   }
 }
